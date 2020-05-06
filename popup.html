@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./popup.css">
+  <script>
+    function validateForm() {
+      var Email = document.forms["myForm"]["Email"].value;
+      var E_name = document.forms["myForm"]["E_name"].value;
+      var E_date = document.forms["myForm"]["E_date"].value;
+      var E_time = document.forms["myForm"]["E_time"].value;
+      var E_description = document.forms["myForm"]["E_description"].value;
+
+
+      if (Email == "" || E_name == "" || E_date == "" || E_time == "" || E_description == "")
+      {
+
+        alert("Name must be filled out");
+        return false;
+    }
+
+    }
+
+  </script>
+  <script src="popup.js"></script>
+
+</head>
+<body>
+
+<!-- partial:index.partial.html -->
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item">
+          <div class="app-form-group">
+            <p class="app-form-control" >Let's Schedule</p>
+          </div>
+          <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+
+
+
+          <div class="app-form">
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="Email" name="Email">
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="Event Name" name="E_name">
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="date" placeholder="Date" value="2020-11-23" name="E_date">
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="time" placeholder="Event Time" name="E_time">
+            </div>
+            <div class="app-form-group message">
+              <input class="app-form-control" placeholder="Event Description" name="E_description">
+            </div>
+            <div class="app-form-group buttons">
+              <button class="app-form-button"  name="btSubmit" >ADD</button>
+            </div>
+          </div>
+
+      </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- partial -->
+
+</body>
+</html>
